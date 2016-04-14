@@ -234,6 +234,15 @@ Phase 2
         1. Play with the GameManager wait time to feel better (3)
 1. We've now got all our set pieces in place
 
+Phase 3
+-------
+
+1. Time to add in our "rules"
+    1. Add in collision logic to BirdController.cs
+    1. Make it restart on collision
+    1. Background overlaps?  Move it to the back
+1. Now we have the basics of the "game"!
+
 References
 ----------
 [Tappy Plane Tutorial](https://github.com/anwell/TappyPlane)

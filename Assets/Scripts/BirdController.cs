@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdController : MonoBehaviour {
     // Amount of jump to apply when space bar is pressed
@@ -37,5 +38,13 @@ public class BirdController : MonoBehaviour {
             // Mark our flag to jump
             ShouldJump = true;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Death();
+    }
+
+    private void Death() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
