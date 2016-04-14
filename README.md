@@ -7,7 +7,7 @@ Topics To Cover
 * What is a Game?
 
     * Extremely hard to define
-    * "all games share four defining traits: a goal, rules, a feedback system, and voluntary participation." - Jane McGonigal 
+    * "all games share four defining traits: a goal, rules, a feedback system, and voluntary participation." - Jane McGonigal
 
 * What is Game Development?
 
@@ -155,3 +155,48 @@ Topics To Cover
             * Transform Movement
             * Transform Rotation
             * Transform Scaling
+
+Building Flappy Bird
+====================
+
+Phase 1
+-------
+
+1. Set the Scene
+    1. Create a scene
+    1. Introduce the camera
+        1. Set the aspect ratio
+    1. Add in a background
+        1. Import the image
+        1. Create an empty game object
+        1. Add a sprite renderer
+        1. Apply the sprite
+        1. Tweak the scaling (2, 1.5, 1)
+1. Add in the Character
+    1. Create the character
+        1. Import the image
+        1. Create an empty game object
+        1. Add the sprite renderer
+        1. Apply the sprite
+    1. That's a big bird!
+        1. Adjust the camera (Orthographic 9)
+        1. Adjust the bird scaling (0.25, 0.25, 1.0f)
+    1. Time for gravity
+        1. Add a Rigidbody2D to the bird
+        1. Falls kinda slow?  Increase it's mass (5, 500, 1000000)?
+            1. What falls faster?  1lb of lead or 1lb of wood?
+        1. Time to increase gravity scaling (2)
+    1. Time to learn how to jump
+        1. Add a BirdController.cs script
+        1. Add an Update loop for input
+        1. Add a FixedUpdate for input to change the velocity
+        1. Set the force to be 5
+        1. Tweak until it feels good (600)
+1. We've made a "flappy" bird!
+
+References
+----------
+[Tappy Plane Tutorial](https://github.com/anwell/TappyPlane)
+[Background Art](http://opengameart.org/content/seamless-cave-background)
+[Bird Sprite](http://opengameart.org/content/fat-bird-sprite-sheets-for-gamedev)
+[Pipe Sprites](http://opengameart.org/content/2d-object-pack)
