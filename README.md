@@ -99,7 +99,7 @@ Topics To Cover
 
 * Case Study: Flappy Bird
 
-    [flappybird]: https://upload.wikimedia.org/wikipedia/en/5/52/Flappy_Bird_gameplay.png "Example of Flappy Bird Gameplay"
+    ![Flappy Bird](https://upload.wikimedia.org/wikipedia/en/5/52/Flappy_Bird_gameplay.png "Example of Flappy Bird Gameplay")
 
     * 2013 Mobile Hit
     * Game Definition
