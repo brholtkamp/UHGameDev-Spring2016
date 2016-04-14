@@ -171,7 +171,7 @@ Phase 1
         1. Create an empty game object
         1. Add a sprite renderer
         1. Apply the sprite
-        1. Tweak the scaling (2, 1.5, 1)
+        1. Tweak the scaling (2.0f, 1.5f, 1.0f)
 1. Add in the Character
     1. Create the character
         1. Import the image
@@ -193,6 +193,46 @@ Phase 1
         1. Set the force to be 5
         1. Tweak until it feels good (600)
 1. We've made a "flappy" bird!
+
+Phase 2
+-------
+
+1. Build our pipes
+    1. Create a pipe
+        1. Create an empty game object
+        1. Import our pipe pieces
+            1. Align to (0.0f, 0.0f, 0.0f)
+            1. Scale them all to (5.0f, 5.0f, 1.0f)
+            1. Cascade 6 pieces downwards, snapping with ctrl key
+        1. Store in "Resources/Prefabs" as a prefab
+        1. Add a BoxCollider2D
+            1. Size (3.0f, 16.0f)
+            1. Offset (0.0f, -6.0f)
+    1. Place the pipe below the bird
+        1. Does it collide?
+        1. Add a BoxCollider2D to the bird
+        1. Now the collide!
+    1. Combine 2 pipes into an "obstacle"
+        1. Rotate one pipe to (0.0f, 0.0f, 180.0f)
+        1. Move it's "local space" to (0.0f, +/-5.0f, 0.0f)
+        1. Combine under a new game object and store as a prefab
+1. Time for more pipes!
+    1. Create a GameManager
+        1. Create GameManager.cs
+        1. Add Update loop
+        1. Add in time management code
+        1. Add in object instantiation code
+        1. Add in transform.position assigment
+    1. Test!
+        1. We get obstacles, but they don't move?
+        1. Add a script to the obstacles!
+    1. Create PlatformMovement.cs
+        1. Create PlatformMovement.cs
+        1. Add Update loop
+        1. Add transform.position movement code
+        1. Play with the speed value to see what feels good (-4)
+        1. Play with the GameManager wait time to feel better (3)
+1. We've now got all our set pieces in place
 
 References
 ----------
