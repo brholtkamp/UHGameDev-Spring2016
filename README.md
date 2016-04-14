@@ -243,6 +243,45 @@ Phase 3
     1. Background overlaps?  Move it to the back
 1. Now we have the basics of the "game"!
 
+Phase 4
+-------
+
+1. Time to add in our more meaningful "goal"
+    1. Add in a Canvas
+        1. Find the Hierarchy window (middle-left)
+        1. Click the create button (top-left corner of the Hierarchy window)
+        1. Navigate and click UI -> Canvas
+    1. Add an empty child to the Canvas
+        1. Right click Canvas in the Hierarchy
+        1. Create empty
+    1. Add in a Text component
+    1. Move it's anchors to the top-left (box below "Rect Transform")
+    1. Set it's position offset from the corner (50.0f, -50.0f)
+    1. Change it's text size to something better (25)
+1. Upgrade our Obstacle
+    1. Pull the prefab back into the scene
+    1. Add a new child game object with a BoxCollider2D to the right side of the gap between pipes
+        1. Move the position (3.0f, 0.0f, 0.0f)
+        1. Adjust the size (3.0f, 6.0f)
+    1. Time to adjust their layers so we can distinguish what we hit
+        1. Add "Score" and "Death" layers
+        1. Assign the Score game object to the "Score" layer
+        1. Assign the Pipe game objects to the "Death" layer
+    1. Press apply on the Obstacle game object to update our prefab
+1. Update our BirdController script
+    1. Add in layer checking logic to the collision event
+1. Add in a script for handling the score
+    1. Create ScoreManager.cs
+    1. Add ScoreManager component to Score game object
+    1. Add public field ScoreManager to BirdController
+    1. Link the two in Unity (drag Score from the hierarchy onto the ScoreManager field in the Bird game object)
+1. _Oh snap_, the bird gets blocked!
+    1. Make the Score collider a "trigger"
+        1. Go to the Score game object and tick the "Is Trigger"
+1. *It still doesn't work!!*
+    1. Move the Score check into OnTriggerEnter2D(Collider2D)
+1. Congrats, you've rebuilt flappy bird!
+
 References
 ----------
 [Tappy Plane Tutorial](https://github.com/anwell/TappyPlane)

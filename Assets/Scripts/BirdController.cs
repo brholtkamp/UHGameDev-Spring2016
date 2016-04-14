@@ -5,6 +5,9 @@ public class BirdController : MonoBehaviour {
     // Amount of jump to apply when space bar is pressed
     public float JumpAmount = 5.0f;
 
+    // Handle on the Score
+    public ScoreManager Score;
+
     // Handle on the rigidbody
     private Rigidbody2D Rigidbody;
 
@@ -41,10 +44,23 @@ public class BirdController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Death();
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Death")) {
+            Death();
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Score")) {
+            IncrementScore();
+        }
     }
 
     private void Death() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void IncrementScore() {
+        Score.IncrementScore();
     }
 }
